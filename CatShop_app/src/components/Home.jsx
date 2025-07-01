@@ -24,7 +24,6 @@ const Home = () => {
                                                 <use xlink:href="#arrow-right"></use>
                                             </svg></a>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="swiper-slide py-5">
@@ -43,7 +42,6 @@ const Home = () => {
                                                 <use xlink:href="#arrow-right"></use>
                                             </svg></a>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="swiper-slide py-5">
@@ -60,15 +58,13 @@ const Home = () => {
                                             shop now
                                             <svg width="24" height="24" viewBox="0 0 24 24" class="mb-1">
                                                 <use xlink:href="#arrow-right"></use>
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
                         <div class="swiper-pagination mb-5"></div>
-
                     </div>
                 </div>
             </section>
