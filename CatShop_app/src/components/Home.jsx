@@ -1,4 +1,7 @@
 import React from 'react'
+import About from './About'
+import CatShop from './CatShop'
+import Footer from './Footer'
 
 const Home = () => {
     return (
@@ -68,6 +71,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <About />
+            <CatShop />
+            <Footer />
         </div>
     )
 }

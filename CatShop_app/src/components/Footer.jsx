@@ -104,7 +104,7 @@ const Footer = () => {
                 </div>
             </footer>
 
-            <div id="footer-bottom">
+            {/* <div id="footer-bottom">
                 <div class="container">
                     <hr class="m-0" />
                     <div class="row mt-3">
@@ -117,7 +117,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
