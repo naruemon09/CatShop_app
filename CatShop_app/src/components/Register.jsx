@@ -44,7 +44,7 @@ const Register = () => {
             </h2>
 
             <div className="mb-3">
-              <input type='text'
+              <input type="text"
                 className="form-control form-control-lg"
                 name="username"
                 value={form.username}
@@ -53,7 +53,7 @@ const Register = () => {
             </div>
 
             <div className="mb-3">
-              <input type='password'
+              <input type="password"
                 className="form-control form-control-lg"
                 name="password" value={form.password}
                 onChange={(e) => setForm({ ...form, password: e.target.value })}
@@ -63,7 +63,7 @@ const Register = () => {
             <div className="row">
               
               <div className="col-md-6 mb-3">
-                <input type='text'
+                <input type="text"
                   className="form-control form-control-lg"
                   name="firstname" value={form.firstname}
                   onChange={(e) => setForm({ ...form, firstname: e.target.value })}
@@ -71,7 +71,7 @@ const Register = () => {
               </div>
 
               <div className="col-md-6 mb-3">
-                <input type='text'
+                <input type="text"
                   className="form-control form-control-lg"
                   name="lastname" value={form.lastname}
                   onChange={(e) => setForm({ ...form, lastname: e.target.value })}
