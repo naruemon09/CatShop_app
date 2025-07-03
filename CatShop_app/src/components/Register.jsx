@@ -21,7 +21,7 @@ const Register = () => {
 
     try {
       console.log(form)
-      const response = await axios.post("http://localhost:7092/api/register" , form);
+      const response = await axios.post("https://localhost:7092/api/Users/CreateUser" , form);
       console.log(response)
       alert("Register Successed")
       navigate("/login");
@@ -128,4 +128,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Register;

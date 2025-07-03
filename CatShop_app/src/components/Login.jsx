@@ -1,6 +1,14 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 
 const Login = () => {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+  const onSubmit = async () => {
+    const response = await axios.post("http://localhost:7092/api/register")
+  };
+
   return (
     <section class="vh-100 d-flex justify-content-center align-items-center" style={{background: 'url("./src/images/background-img.png")'}}>
     <div class="container">
@@ -29,4 +37,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
