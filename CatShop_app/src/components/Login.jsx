@@ -1,40 +1,75 @@
-import axios from 'axios';
-import React, { useState } from 'react'
+import axios from "axios";
+import React, { useState } from "react";
 
 const Login = () => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const onSubmit = async () => {
-    const response = await axios.post("http://localhost:7092/api/register")
+    try {
+      const response = await axios.post(
+        "https://localhost:7092/api/Logins/LoginUser",
+        { username, password }
+      );
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
-    <section class="vh-100 d-flex justify-content-center align-items-center" style={{background: 'url("./src/images/background-img.png")'}}>
-    <div class="container">
-      <div class="row">
-        <div class="offset-md-3 col-md-6 my-5">
-          <h2 class="display-3 fw-normal text-center">...<span class="text-primary">Login</span>...
-          </h2>
-            <div class="mb-3">
-              <input type="text" class="form-control form-control-lg" name="username"
-                placeholder="Enter Your Username"/>
+    <section
+      className="vh-100 d-flex justify-content-center align-items-center"
+      style={{ background: 'url("./src/images/background-img.png")' }}
+    >
+      <div className="container">
+        <div className="row">
+          <div className="offset-md-3 col-md-6 my-5">
+            <h2 className="display-3 fw-normal text-center">
+              ...<span className="text-primary">Login</span>...
+            </h2>
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                name="username"
+                onChange={(e) => setUsername( e.target.value )}
+                placeholder="Enter Your Username"
+              />
             </div>
-            <div class="mb-3">
-              <input type="password" class="form-control form-control-lg" name="password"
-                placeholder="Enter Your Password"/>
+            <div className="mb-3">
+              <input
+                type="password"
+                className="form-control form-control-lg"
+                name="password"
+                onChange={(e) => setPassword( e.target.value )}
+                placeholder="Enter Your Password"
+              />
             </div>
-            <div class="d-grid gap-2">
-              <button type="submit" class="btn btn-dark btn-lg rounded-1">Login it now</button>
+            <div className="d-grid gap-2">
+              <button
+                type="submit"
+                className="btn btn-dark btn-lg rounded-1"
+                onClick={() => {
+                  onSubmit();
+                }}
+              >
+                Login it now
+              </button>
             </div>
-            <div class="mt-4 text-center">
-              <p class="mb-0 fw-normal">Don't have an account? <a href="/register" class="fw-bold text-primary">Sign Up</a></p>
+            <div className="mt-4 text-center">
+              <p className="mb-0 fw-normal">
+                Don't have an account?{" "}
+                <a href="/register" className="fw-bold text-primary">
+                  Sign Up
+                </a>
+              </p>
             </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  )
-}
+    </section>
+  );
+};
 
 export default Login;
