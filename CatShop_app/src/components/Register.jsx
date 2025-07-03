@@ -1,6 +1,7 @@
+import axios from "axios";
 import React, { useState } from "react";
-import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
   const navigate = useNavigate();
@@ -17,9 +18,11 @@ const Register = () => {
   });
 
   const onSubmit = async () => {
+
     try {
       console.log(form)
-      const response = await axios.post("https://localhost:7092/api/Users/CreateUser", form);
+      const response = await axios.post("http://localhost:7092/api/register" , form);
+      console.log(response)
       alert("Register Successed")
       navigate("/login");
     } catch (error) {
@@ -32,7 +35,10 @@ const Register = () => {
       <div className="container">
         <div className="row">
           <div className="offset-md-3 col-md-6 my-5">
-            <h2 className="display-3 fw-normal text-center">...<span className="text-primary">Register</span>
+            <h2 className="display-3 fw-normal text-center">
+              ...
+              <span className="text-primary">Register</span>
+              ...
             </h2>
               <div className="mb-3">
                 <input type="text" className="form-control form-control-lg" name="username"
@@ -116,7 +122,7 @@ const Register = () => {
                 <p className="mb-0 fw-normal">Have already an account? <a href="/login" className="fw-bold text-primary">Sign in</a></p>
               </div>
           </div>
-        </div>
+        </div>       
       </div>
     </section>
   )
