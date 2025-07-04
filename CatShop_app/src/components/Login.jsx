@@ -1,7 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,7 +15,11 @@ const Login = () => {
         "https://localhost:7092/api/Logins/LoginUser",
         { username, password }
       );
-      console.log(response);
+      console.log(response)
+      localStorage.setItem("username", response.data.username);
+      localStorage.setItem("token", response.data.token);
+      navigate("/");
+
     } catch (error) {
       console.error(error);
     }
